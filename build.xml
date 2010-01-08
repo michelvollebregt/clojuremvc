@@ -1,0 +1,9 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="clojuremvc" default="resolve">
+    
+    <!-- ================================= 
+          target: resolve              
+         ================================= -->
+    <target name="resolve" description="--> retrieve dependencies with ivy">
+        <ivy:retrieve />
+    </target>
+</project>
