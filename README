@@ -1,0 +1,13 @@
+Clojure MVC intends to make the features of Spring MVC accessible to Clojure, using Clojure syntax.
+
+It is intended as a lightweight framework for creating web applications. It provides a way of separating model, view and controller. Views can be written in JSP, using Spring’s JSP tags. Controllers can be written in Clojure.
+
+Clojure MVC is intended as an MVC framework only. Clojure MVC does not map domain classes to database tables, generate databases and views. Clojure MVC intends to do one thing only, and do one thing very well. Clojure MVC therefore can be used with any object relational mapping tool or any other library you think is most suitable for a job.
+
+Using Clojure MVC will allow you to write controllers like this:
+
+(defcontroller com.foo.MyController
+  "/index.html"
+  [:view-name {:model-arg-0 "first argument" :model-arg-1 "second argument"}]
+
+Clojure MVC is still in a very early stage. The above is exactly what it can do. It has not been tested very well. Passing request parameters to the controller has not been implemented yet. Putting information on the session has not been implemented yet. Setting up the project in your IDE is still some work, and hasn’t been properly documented. These features (in this order) are planned to be added this year.
