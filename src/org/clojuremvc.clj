@@ -21,7 +21,7 @@
          :post-init ~(str shortname "-postinit")
          ))))
 
-(defmacro defmapper [classname & body]
+(defmacro defmapping [classname & body]
   (let [this (gensym "this")
         shortname (strip (str classname) #(inc (.lastIndexOf % ".")))]
     `(do
