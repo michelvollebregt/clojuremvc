@@ -7,7 +7,9 @@ Clojure MVC is intended as an MVC framework only. Clojure MVC does not map domai
 Using Clojure MVC will allow you to write controllers like this:
 
 (defcontroller com.foo.MyController
-  "/index.html"
-  [:view-name {:model-arg-0 "first argument" :model-arg-1 "second argument"}]
+  "/index.html" [:request userinput extraparam]
+  [:view-name {:model-arg-0 "first argument" :model-arg-1 (str userinput extraparam)}]
+
+[:request userinput extraparam] binds variables called userinput and extraparam to the values of the http request parameters called userinput and extraparam. For example, "/index.html?userinput=foo&extraparam=bar", will call the above controller and put "foobar" in the value of model-arg-1.
 
 Clojure MVC is still in a very early stage. The above is exactly what it can do. It has not been tested very well. Passing request parameters to the controller has not been implemented yet. Putting information on the session has not been implemented yet. Setting up the project in your IDE is still some work, and hasn’t been properly documented. These features (in this order) are planned to be added this year.
